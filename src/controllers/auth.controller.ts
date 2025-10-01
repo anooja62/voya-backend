@@ -16,6 +16,7 @@ export async function login(req: Request, res: Response) {
   try {
     const { email, password } = req.body;
     const result = await loginUser(email, password);
+    console.log("✌️result --->", result);
     return sendSuccess(res, "Login successful", result);
   } catch (err: any) {
     return sendError(res, err.message);
